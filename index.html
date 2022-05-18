@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== IconScout =====-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- ===== Link Swiper's CSS =====-->
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+
+   <!-- ===== CSS =====-->
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="./css/all.css">
+   <link rel="stylesheet" href="./homepage.css">
+
+    <title>Amazon Kindle Books Library</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Registration page Form --> 
+                <form id="registerform" class="register" name="register-form" style="display: none;">
+                    <span class="title">Registration</span>
+                    <label for="heading" class="welcome">Welcome to Amazon Kindle Books Library Store!...</label>
+                    <label for="message" class="register">Please first Register to access our Books in Store</label>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name and surname" id="namesurname">
+                        <i class="uil uil-user"></i>
+                     </div>
+                     <div class="input-field">
+                         <input type="text" placeholder="Enter your email" id="email">
+                         <i class="uil uil-envelope icon"></i>
+                     </div>
+                     <div class="input-field">
+                         <input type="number" placeholder="Enter your phone number" id="phonenumber">
+                         <i class="uil uil-phone"></i>
+                     </div>
+                     <div class="input-field">
+                         <input type="file" id="imageinput" accept="image/png, image/jpg">
+                         <div id="display-image"></div>
+                         <i class="uil uil-picture"></i>
+                     </div>
+                     <div class="input-field">
+                         <input type="password" class="password" placeholder="Create a password" id="password">
+                         <i class="uil uil-lock icon"></i>
+                     </div>
+                     <div class="input-field">
+                         <input type="password" class="password" placeholder="Confirm a password" id="confirm">
+                         <i class="uil uil-lock icon"></i>
+                         <i class="uil uil-eye-slash showHidePw"></i>
+                     </div>
+                     
+                     <div class="checkbox-text">
+                         <div class="checkbox-content">
+                             <input type="checkbox" id="sigCheck">
+                             <label for="sigCheck" class="text">I accept all terms & conditions</label>
+                         </div>
+                     </div>
+                     
+                     <div class="input-field button">
+                         <input type="button" onclick="registerUser()" value="Signup Now">
+                     </div>
+                 </form>
+                 
+                 <div class="signup-login" id="signuplogin">
+                     <span class="text">Already a member?
+                         <a href="#" onclick="openLogin()" class="text login-link">Login now</a>
+                     </span>
+                 </div>
+
+         <!-- Login page Form -->
+                <form id="loginform" class="login" name="loginform" style="display: none;">
+                    <span class="title">Login</span>
+                    <label for="heading" class="welcome">Welcome to Amazon Kindle Books Library Store!...</label>
+                    <label for="message"class="login">Please Login to access our books</label>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" id="email">
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" id="password">
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+
+                        <a href="#" class="text" onclick="forgotPassword()">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" onclick="loginUser()" value="Login Now">
+                    </div>
+                </form>
+
+                <div class="login-signup" id="loginsignup">
+                    <span class="text">Not a member?
+                        <a href="#" onclick="openRegister()" class="text signup-link">Signup now</a>
+                    </span>
+                </div>
+
+        <!-- Home/Landing page Form -->
+        <div class="homePage" id="homepage">
+
+            <div class="container-profile" >
+                <div class="user-profile" id="userProfile">
+
+                </div>
+        
+                <div class="user-info">
+                    <img src="./images/Amazon-Kindle-Logo-ES.jpg" alt="">
+                    <i class="fa-solid fa-rectangle-vertical-history">Collections</i>
+                    <i class="fa-solid fa-bookmark">Saved</i>
+                    <i class="fa-solid fa-user">Profile</i>
+                    <a href="#" onclick="openLogin()" class="text login-link">Logout</a>
+                </div>
+                <div class="logo-image">
+                    <img src="./images/amazon.jpg" alt="Logo picture">
+                </div>
+            </div>
+    
+            <div class="container-books">
+                <div class="book-nav">
+                    <div class="logo">
+                        <img src="./images/kindle.jpg" alt="Logo picture">
+                    </div>
+                    <div class="search-featured">
+                        <div class="search-input">
+                            <input type="text" id="name" placeholder="Search your books...">
+                            <div class="autocomplete-box">
+                                <li>22 Seconds (Women's Murder Club)</li>
+                                <li>A Sacred Oath Memoirs of a Secretary of Defense During Extraordinary Times</li>
+                                <li>Book Lovers</li>
+                                <li>Daddy's Girl An Age Gap Surprise Pregnancy Romance (Silver Fox Daddies)</li>
+                                <li>Eyes on Me (Salacious Players' Club)</li>
+                                <li>Finding Monica (SEAL Team Hawaii Book 4)</li>
+                                <li>Harry Potter and the Chamber of Secrets</li>
+                                <li>Harry Potter and the Goblet of Fire</li>
+                                <li>Harry Potter and the Sorcerer's Stone</li>
+                                <li>Irresponsible Puckboy (Puckboys Book 2)</li>
+                                <li>Macbeth</li>
+                                <li>Mangava</li>
+                                <li>Mine Boy The First Modern Novel of Black South Africa</li>
+                                <li>Mulunguntima</li>
+                                <li>Owned By A Sinner, An Irish Mafia Romance</li>
+                                <li>Romeo and Juliet</li>
+                                <li>Shattered Cradle (Makarova Bratva Book 2)</li>
+                                <li>Strangers We Know</li>
+                                <li>Teleni</li>
+                                <li>The Candid Life of Meena Dave</li>
+                                <li>The Druid (The Dawning of Muirwood Book 1)</li>
+                                <li>The Investigator</li>
+                                <li>THE MERCHANT OF VENICE</li>
+                                <li>The Water Dancer (Oprah's Book Club) A Novel</li>
+                                <li>TIHLÙNGÙ TA RIXAKA, dikixinari ya ririmi ra Xitsonga</li>
+                                <li>Under Her Care A Thriller</li>
+                            </div>
+                            <label for="" class="icon" onclick="search()">
+                                <i class="uil uil-search"></i>
+                            </label>
+                        </div>
+                        
+                        <a href="">New Release</a>
+                        <a href="#">Featured</a>
+    
+                        <div class="navigation">
+                            <span style="--i:0;--x:-1;--y:0">
+                                <i class="uil uil-camera"></i></span>
+                            <span style="--i:1;--x:1;--y:0">
+                                <i class="uil uil-bell"></i></span>
+                            <span style="--i:2;--x:0;--y:-1">
+                                <i class="uil uil-clock"></i></span>
+                            <span style="--i:3;--x:0;--y:1">
+                                <i class="uil uil-diamond"></i></span>
+                        </div>
+    
+                        <a href="#" onclick="openLogin()">Login</a>
+                        <a href="#" onclick="openRegister()">Register</a>
+                    </div>
+                </div>
+    
+                <div class="reading">
+                    <div class="books-read">
+                        <h4><strong>Books you read last</strong></h4>
+                    </div>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper read-last">
+                            <div class="swiper-slide book">
+                                <img src="./images/Harry Potter and the Sorcerer's Stone.jpg">
+                                <div class="content">
+                                    <h4>Harry Potter and the sorcerer stone</h4>
+                                    <p>309 pages .</p>
+                                    <p>Chapter 13 .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/The Water Dancer (Oprah's Book Club) A Novel.jpg">
+                                <div class="content">
+                                    <h4>TA Nehisi Goates The Water Dancer</h4>
+                                    <p>New purchase .</p>
+                                    <p>Yet to Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Mangava.jpg">
+                                <div class="content">
+                                    <h4>Mangava</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Macbeth.jpg">
+                                <div class="content">
+                                    <h4>Macbeth</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Harry Potter and the Chamber of Secrets.jpg">
+                                <div class="content">
+                                    <h4>Harry potter and the chamber of secrets</h4>
+                                    <p>New purchase .</p>
+                                    <p>Yet to Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Mine Boy The First Modern Novel of Black South Africa.jpg">
+                                <div class="content">
+                                    <h4>Mine boy</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Mulunguntima.jpg">
+                                <div class="content">
+                                    <h4>Mulunguntima</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Harry Potter and the Goblet of Fire.jpg">
+                                <div class="content">
+                                    <h4>Harry potter and the Goblet of Fire</h4>
+                                    <p>New purchase .</p>
+                                    <p>Yet to Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Romeo and Juliet.jpg">
+                                <div class="content">
+                                    <h4>Romeo and Juliet</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/Teleni.jpg">
+                                <div class="content">
+                                    <h4>Teleni</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/TIHLÙNGÙ TA RIXAKA, dikixinari ya ririmi ra Xitsonga.jpg">
+                                <div class="content">
+                                    <h4>Tihlungu ta rixaka</h4>
+                                    <p>New purchase .</p>
+                                    <p>Yet to Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide book">
+                                <img src="./images/THE MERCHANT OF VENICE.jpg">
+                                <div class="content">
+                                    <h4>The Merchant ov Venice</h4>
+                                    <p>New purchase .</p>
+                                    <p>Last Read</p>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="release">
+                    <div class="heading-release">
+                        <h4><strong>New Release</strong> </h4>
+                    </div>
+                    <div class="new-release"> 
+                        <div class="new-book">
+                            <img src="./images/Owned By A Sinner, An Irish Mafia Romance.jpg">
+                            <div class="release-content">
+                                <h5>Owned By A Sinner, An Irish Mafia Romance</h5>
+                                <p>Michelle Heard</p>
+                                <p>Novel</p>
+                            </div>
+                        </div>
+                        <div class="new-book">
+                            <img src="./images/Book Lovers.jpg">
+                            <div class="release-content">
+                                <h5>Book Lovers</h5>
+                                <p>Emily Henry</p>
+                                <p>Novel</p>
+                            </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Shattered Cradle (Makarova Bratva Book 2).jpg">
+                                <div class="release-content">
+                                    <h5>Shattered Cradle (Makarova Bratva Book 2)</h5>
+                                    <p>Nicole Fox</p>
+                                    <p>Thriller</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/22 Seconds (Women's Murder Club).jpg">
+                                <div class="release-content">
+                                    <h5>22 Seconds (Women's Murder Club)</h5>
+                                    <p>James Patterson</p>
+                                    <p>Fiction</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/The Candid Life of Meena Dave.jpg">
+                                <div class="release-content">
+                                    <h5>The Candid Life of Meena Dave</h5>
+                                    <p>Namrata Patel</p>
+                                    <p>Novel</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Eyes on Me (Salacious Players' Club).jpg">
+                                <div class="release-content">
+                                    <h5>Eyes on Me (Salacious Players' Club)</h5>
+                                    <p>Sara Cate</p>
+                                    <p>Fiction</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Under Her Care A Thriller.jpg">
+                                <div class="release-content">
+                                    <h5>Under Her Care A Thriller</h5>
+                                    <p>Lucinda Berry</p>
+                                    <p>Thriller</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Irresponsible Puckboy (Puckboys Book 2).jpg">
+                                <div class="release-content">
+                                    <h5>Irresponsible Puckboy (Puckboys Book 2)</h5>
+                                    <p>Eden Finley</p>
+                                    <p>Mystery</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Finding Monica (SEAL Team Hawaii Book 4).jpg">
+                                <div class="release-content">
+                                    <h5>Finding Monica (SEAL Team Hawaii Book 4)</h5>
+                                    <p>Susan Stoker</p>
+                                    <p>Romance</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Daddy's Girl An Age Gap Surprise Pregnancy Romance (Silver Fox Daddies).jpg">
+                                <div class="release-content">
+                                    <h5>Daddy's Girl An Age Gap Surprise Pregnancy Romance (Silver Fox Daddies)</h5>
+                                    <p>K.C. Crowne</p>
+                                    <p>Adventure Fiction</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/The Druid (The Dawning of Muirwood Book 1).jpg">
+                                <div class="release-content">
+                                    <h5>The Druid (The Dawning of Muirwood Book 1)</h5>
+                                    <p>Jeff Wheeler</p>
+                                    <p>Novels</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/The Investigator.jpg">
+                                <div class="release-content">
+                                    <h5>The Investigator</h5>
+                                    <p>John Sandford</p>
+                                    <p>Thriller</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/A Sacred Oath Memoirs of a Secretary of Defense During Extraordinary Times.jpg">
+                                <div class="release-content">
+                                    <h5>A Sacred Oath Memoirs of a Secretary of Defense During Extraordinary Times</h5>
+                                    <p>Mark T. Esper</p>
+                                    <p>Mystery</p>
+                                </div>
+                            </div>
+                            <div class="new-book">
+                                <img src="./images/Strangers We Know.jpg">
+                                <div class="release-content">
+                                    <h5>Strangers We Know</h5>
+                                    <p>Elle Marr</p>
+                                    <p>Novel</p>
+                                </div>
+                            </div>
+    
+                            <div class="famous-authors">
+                                    <h4><strong>Famous Authors</strong></h4>
+                        
+                                    <div class="author">
+                                        <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
+                                        <div class="author-content">
+                                            <h5><strong>J.K. Rowlings</strong></h5>
+                                            <p>10 Books</p>
+                                        </div>
+                                    </div>
+                                    <div class="author">
+                                        <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
+                                        <div class="author-contnet">
+                                            <h5><strong>T.H Khosa</strong></h5>
+                                            <p>61 Novels</p>
+                                        </div>
+                                    </div>
+                                    <div class="author">
+                                        <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
+                                        <div class="author-contnet">
+                                            <h5><strong>William Shakespeare</strong></h5>
+                                            <p>179 Books</p>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>        
+                </div>
+    
+            </div>
+    
+        </div>
+     </div>
+
+     <script src="./script.js">
+         //Funtion to search
+         var arrayBooks = ["22 Seconds (Women's Murder Club)","A Sacred Oath Memoirs of a Secretary of Defense During Extraordinary Times","Book Lovers","Daddy's Girl An Age Gap Surprise Pregnancy Romance (Silver Fox Daddies)","Eyes on Me (Salacious Players' Club)","Finding Monica (SEAL Team Hawaii Book 4)","Harry Potter and the Chamber of Secrets","Harry Potter and the Goblet of Fire","Harry Potter and the Sorcerer's Stone","Irresponsible Puckboy (Puckboys Book 2)","Macbeth","Mangava","Mine Boy The First Modern Novel of Black South Africa","Mulunguntima","Owned By A Sinner, An Irish Mafia Romance","Romeo and Juliet","Shattered Cradle (Makarova Bratva Book 2)","Strangers We Know","Teleni","The Candid Life of Meena Dave","The Druid (The Dawning of Muirwood Book 1)","The Investigator","THE MERCHANT OF VENICE","he Water Dancer (Oprah's Book Club) A Novel","TIHLÙNGÙ TA RIXAKA, dikixinari ya ririmi ra Xitsonga","Under Her Care A Thriller"];
+        function search()
+        {
+          var text = document.getElementById('name').value;
+          var index = myArray.indexOf(text);
+          if(index !== -1)
+          {
+            alert('Book is available please login to hire');
+          }
+          else{
+            alert('requested book not found')
+          }
+        }
+
+        //Funtion to slide
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+        let navigation = document.querySelector('.navigation');
+        navigation.onclick = function(){
+            navigation.classList.toggle('active')
+        }
+     </script>
+     
+    
+</body>
+</html>
