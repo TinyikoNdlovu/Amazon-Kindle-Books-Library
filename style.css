@@ -113,21 +113,11 @@ body{
     color: #5b13b9;
 }
 
-.input-field i.icon{
-    left: 0;
-}
-
-.input-field i.showHidePw{
-    right: 0;
-    cursor: pointer;
-    padding: 10px;
-}
-
 .checkbox-text{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2px;
+    margin-top: 20px;
 }
 
 .checkbox-text .checkbox-content{
@@ -175,7 +165,7 @@ a.text{
     background-color: #265df2;
 }
 
-.signup-login{
+.login-signup{
     margin-top: 30px;
     text-align: center;
 }
@@ -257,14 +247,76 @@ label{
     color: #5b13b9;
 }
 
-.input-field i.icon{
+.input{
+    position: relative;
+    background-color: white;
+    padding: 1.35rem 1.25rem;
+    border-radius:  .5rem;
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+
+.input-lock,
+.input-icon{
+    font-size: 1.25rem;
+    z-index: 1;
+}
+
+.input-lock,
+.input-password{
+    color: blue;
+}
+
+.input-lock{
     left: 0;
 }
 
-.input-field i.showHidePw{
+.input-icon{
+    color: royalblue;
     right: 0;
     cursor: pointer;
     padding: 10px;
+}
+
+.input-password{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.input-password::placeholder{
+    color: #111;
+}
+
+.input-overlay{
+    width: 32px;
+    height: 32px;
+    background-color: none;
+    position: absolute;
+    right: .9rem;
+    border-radius: 50%;
+    z-index: 0;
+    transition: .4s ease-in-out;
+}
+
+/* Transition effect */
+.overlay-content{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    right: 0;
+}
+
+.overlay-content ~ .input-lock{
+    color: aquamarine;
+}
+
+.overlay-content ~ .input-password,
+.overlay-content ~ .input-password::placeholder{
+    color: cadetblue;
 }
 
 .checkbox-text{
@@ -282,19 +334,6 @@ label{
 .checkbox-content input{
     margin: 0 8px -2px 4px;
     accent-color: #5b13b9;
-}
-
-.text{
-    color: #333;
-    font-size: 14px;
-}
-a.text{
-    color: #5b13b9;
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
 }
 
 .button{

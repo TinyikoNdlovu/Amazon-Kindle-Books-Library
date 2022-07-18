@@ -32,7 +32,7 @@ class storeData {
         let email = document.forms["registerform"]["email"].value;
         let phone = document.forms["registerform"]["phonenumber"].value;
         let imagepic = document.forms["registerform"]["imageinput"].value;
-        let pword = document.forms["registerform"]["password"].value;
+        let pword = document.forms["registerform"]["input-pass"].value;
         let pword2 = document.forms["registerform"]["confirm"].value;
 
 
@@ -78,7 +78,7 @@ class storeData {
     loginUser() {
         //get information from inputs
         let uemail = document.forms["loginform"]["email"].value;
-        let pword = document.forms["loginform"]["password"].value;
+        let pword = document.forms["loginform"]["input-pass"].value;
     
         //Check if inputs are empty
         if(uemail === "" || pword === "") {
@@ -111,23 +111,38 @@ class storeData {
         }
     }
 
-    //Forgot password function
-    forgotpassword () {
-        var email = document.getElementById("email").value;
-    
-        if(emailArray.indexOf(email) == -1){
-            if (email == ""){
-                alert("Email required.");
-                return ;
-            }
-            alert("Email does not exist.");
-            return ;
-        }
-    
-        alert("email is send to your email check it. \n Thanks");
-        document.getElementById("email").value ="";
-    }
 }
+
+ /*============ SHOW / HIDDEN INPUT ============*/
+ const showHiddenInput = (inputOverlay, inputPass, inputIcon) => {
+    const overlay = document.getElementById(inputOverlay),
+    input = document.getElementById(inputPass),
+    iconEye = document.getElementById(inputIcon)
+
+    iconEye.addEventListener('click', () =>{
+        //Change password to text
+        if(input.type === 'password'){
+            //Switch to text
+            input.type = 'text'
+
+            //Change icon
+            iconEye.classList.add(bx-show)
+        }else{
+            //Change to password
+            input.type = 'password'
+
+            //Remove icon
+            iconEye.classList.remove('bx-show')
+        }
+
+        //Toggle the overlay
+        overlay.classList.toggle('overlay-content')
+    })
+
+}
+
+showHiddenInput('input-overlay','input-pass','input-icon')
+ 
 
 //function to register
 function registerUser() {
@@ -144,6 +159,8 @@ function openRegister() {
     document.forms["loginform"].style.display = "none";
     document.forms["registerform"].style.display = "grid";
     document.querySelector("#homepage").style.display = "none";
+    document.querySelector("#signuplogin").style.display = "grid";
+    document.querySelector("#loginsignup").style.display = "none";
 }
 
 //function to open login window
@@ -152,9 +169,10 @@ function openLogin() {
     document.forms["registerform"].style.display = "none";
     document.querySelector("#homepage").style.display = "none";
     document.querySelector("#signuplogin").style.display = "none";
+    document.querySelector("#loginsignup").style.display = "grid";
 }
 
-//function to open login window
+//function to open Homepage/Langingpage window
 function openHomePage() {
     document.forms["loginform"].style.display = "none";
     document.forms["registerform"].style.display = "none";
