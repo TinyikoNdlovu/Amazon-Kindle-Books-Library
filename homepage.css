@@ -5,16 +5,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container-homepage {
+/* ===== Home/Landing page CSS ===== */
+.homepage {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
