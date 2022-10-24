@@ -13,9 +13,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(./images/books.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .container{
@@ -44,7 +41,6 @@ body{
 }
 
 /* ===== Registration Form page CSS ===== */
-
 .container .signup{
     transition: opacity 0.09s ease;
 }
@@ -123,6 +119,8 @@ body{
 .checkbox-text .checkbox-content{
     display: flex;
     align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
 }
 
 .checkbox-content input{
@@ -130,9 +128,10 @@ body{
     accent-color: #5b13b9;
 }
 
-.text{
+.checkbox-content label{
     color: #333;
     font-size: 14px;
+    cursor: pointer;
 }
 
 a.text{

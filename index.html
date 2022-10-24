@@ -18,267 +18,335 @@
 <body>
     <div class="container">
         <!-- Registration page Form --> 
-                <form id="registerform" class="register" name="register-form" style="display: none;">
-                    <span class="title">Signup Here</span>
-                    <label for="heading" class="welcome">Welcome to Amazon Kindle Books Library Store!...</label>
-                    <label for="message" class="register">Please first Register to access our Books in Store</label>
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter your name and surname" id="namesurname">
-                        <i class="uil uil-user"></i>
-                     </div>
-                     <div class="input-field">
-                         <input type="email" placeholder="Enter your email" id="email">
-                         <i class="uil uil-envelope icon"></i>
-                     </div>
-                     <div class="input-field">
-                         <input type="number" placeholder="Enter your phone number" id="phonenumber">
-                         <i class="uil uil-phone"></i>
-                     </div>
-                     <div class="input-field">
-                         <input type="file" id="imageinput" accept="image/png, image/jpg">
-                         <div id="display-image"></div>
-                         <i class="uil uil-picture"></i>
-                     </div>
-                     <div class="input-field input">
-                        <div class="input-overlay" id="input-overlay"></div>
-                         <input type="password" placeholder="Create a password" class="input-password" id="input-pass">
-                         <i class="uil uil-lock input-lock"></i>
-                     </div>
-                     <div class="input-field input">
-                        <div class="input-overlay" id="input-overlay"></div>
-                         <input type="password" placeholder="Confirm a password" class="input-password" id="confirm">
-                         <i class="uil uil-lock input-lock"></i>
-                         <i class="uil uil-eye-slash input-icon bx-show" id="input-icon"></i>
-                     </div>
-                     
-                     <div class="checkbox-text">
-                         <div class="checkbox-content">
-                             <input type="checkbox" id="sigCheck">
-                             <label for="sigCheck" class="text">I accept all terms & conditions</label>
+                <div class="register-container">
+                    <form id="registerform" class="register" name="register-form" style="display: none;">
+                        <span class="title">Signup Here</span>
+                        <label for="heading" class="welcome">Welcome to Amazon Kindle Books Library Store!...</label>
+                        <label for="message" class="register">Please first Register to access our Books in Store</label>
+                        <div class="input-field">
+                            <input type="text" placeholder="Enter your name and surname" id="namesurname">
+                            <i class="uil uil-user"></i>
                          </div>
-                     </div>
+                         <div class="input-field">
+                             <input type="email" placeholder="Enter your email" id="email">
+                             <i class="uil uil-envelope icon"></i>
+                         </div>
+                         <div class="input-field">
+                             <input type="number" placeholder="Enter your phone number" id="phonenumber">
+                             <i class="uil uil-phone"></i>
+                         </div>
+                         <div class="input-field">
+                             <input type="file" id="imageinput" accept="image/png, image/jpg">
+                             <div id="display-image"></div>
+                             <i class="uil uil-picture"></i>
+                         </div>
+                         <div class="input-field input">
+                            <div class="input-overlay" id="input-overlay"></div>
+                             <input type="password" placeholder="Create a password" class="input-password" id="input-pass">
+                             <i class="uil uil-lock input-lock"></i>
+                         </div>
+                         <div class="input-field input">
+                            <div class="input-overlay" id="input-overlay"></div>
+                             <input type="password" placeholder="Confirm a password" class="input-password" id="confirm">
+                             <i class="uil uil-lock input-lock"></i>
+                             <i class="uil uil-eye-slash input-icon bx-show" id="input-icon"></i>
+                         </div>
+                         
+                         <div class="checkbox-text">
+                             <div class="checkbox-content">
+                                 <input type="checkbox" id="sigCheck">
+                                 <label for="sigCheck">I accept all terms & conditions</label>
+                             </div>
+                         </div>
+                         
+                         <div class="input-field button">
+                             <input type="button" onclick="registerUser()" value="Signup Now">
+                         </div>
+                     </form>
                      
-                     <div class="input-field button">
-                         <input type="button" onclick="registerUser()" value="Signup Now">
-                     </div>
-                 </form>
-                 
-                 <div class="login-signup" id="signuplogin">
-                    <span class="text">Already a member?
-                        <a href="#" onclick="openLogin()" class="text signup-link">Login now</a>
-                    </span>
+                     <div class="login-signup" id="signuplogin">
+                        <span class="text">Already a member?
+                            <a href="#" onclick="openLogin()" class="text signup-link">Login now</a>
+                        </span>
+                    </div>
                 </div>
 
          <!-- Login page Form -->
-                <form id="loginform" class="login" name="loginform" style="display: none;">
-                    <span class="title">Login Here</span>
-                    <label for="heading" class="welcome">Welcome to Amazon Kindle Books Library Store!...</label>
-                    <label for="message"class="login">Please Login to access our books</label>
-                    <div class="input-field">
-                        <input type="email" placeholder="Enter your email  or phone" id="email">
-                        <i class="uil uil-envelope icon"></i>
-                    </div>
-                    <div class="input-field input">
-                        <div class="input-overlay" id="input-overlay"></div>
-                        <input type="password" placeholder="Enter your password" class="input-password" id="input-pass">
-                        <i class="uil uil-lock input-lock"></i>
-                        <i class="uil uil-eye-slash input-icon bx-show" id="input-icon"></i>
-                    </div>
-
-                    <div class="checkbox-text">
-                        <div class="checkbox-content">
-                            <input type="checkbox" id="logCheck">
-                            <label for="logCheck" class="text">Remember me</label>
+                <div class="login-container">
+                    <form id="loginform" class="login" name="loginform" style="display: none;">
+                        <span class="title">Login Here</span>
+                        <label for="heading" class="welcome">Welcome to Amazon Kindle Books Library Store!...</label>
+                        <label for="message"class="login">Please Login to access our books</label>
+                        <div class="input-field">
+                            <input type="email" placeholder="Enter your email  or phone" id="email">
+                            <i class="uil uil-envelope icon"></i>
                         </div>
+                        <div class="input-field input">
+                            <div class="input-overlay" id="input-overlay"></div>
+                            <input type="password" placeholder="Enter your password" class="input-password" id="input-pass">
+                            <i class="uil uil-lock input-lock"></i>
+                            <i class="uil uil-eye-slash input-icon bx-show" id="input-icon"></i>
+                        </div>
+    
+                        <div class="checkbox-text">
+                            <div class="checkbox-content">
+                                <input type="checkbox" id="logCheck">
+                                <label for="logCheck">Remember me</label>
+                            </div>
+                        </div>
+    
+                        <div class="input-field button">
+                            <input type="button" onclick="loginUser()" value="Login Now">
+                        </div>
+                    </form>
+    
+                    <div class="login-signup" id="loginsignup">
+                        <span class="text">Not a member?
+                            <a href="#" onclick="openRegister()" class="text signup-link">Signup now</a>
+                        </span>
                     </div>
-
-                    <div class="input-field button">
-                        <input type="button" onclick="loginUser()" value="Login Now">
-                    </div>
-                </form>
-
-                <div class="login-signup" id="loginsignup">
-                    <span class="text">Not a member?
-                        <a href="#" onclick="openRegister()" class="text signup-link">Signup now</a>
-                    </span>
                 </div>
 
         <!-- Home/Landing page Form -->
-        <div class="homepage" id="homepage">
-            <div class="left-sidebar">
-                <div class="profile-info" id="userProfile">
-                    <img src="./images/munhu.jpg" alt="Profile picture">
-                    <h4>Welcome Back</h4>
-                    <h5>Sarah</h5>
+<!-- Left side info -->
+
+<!-- User Profile info -->
+<div class="homepage" id="homepage">
+    <div class="left-sidebar">
+        <div class="profile-info" id="userProfile">
+            <img src="./images/munhu.jpg" alt="Profile picture">
+            <h4>Welcome Back</h4>
+            <h5>Sarah</h5>
+        </div>
+
+        <!-- Menu section -->
+        <div class="user-info">
+            <a href="#"><i class="uil uil-signin">My Kindle Board</i></a>
+            <a href="#"><i class="uil uil-folder-network">Collections</i></a>
+            <a href="#"><i class="uil uil-bookmark"></i>Saved</a>
+            <a href="#"><i class="uil uil-user">Profile</i></a>
+            <a href="#" onclick="openLogin()" class="text login-link"><i class="uil uil-signout"></i>Signout</a>
+        </div>
+
+        <!-- Just the logo image -->
+        <div class="logo1">
+            <img src="./images/amazon.jpg" alt="Logo picture">
+        </div>
+    </div>
+
+    <!--Right side info -->
+
+    <!-- Header section of right side -->
+    <div class="right-sidebar">
+        <div class="navbar">
+            <div class="header">
+                <img src="./images/kindle.jpg" alt="Logo picture">
+
+                <form action="" class="search-form">
+                    <input type="search" id="search-box" name="" placeholder="Search your books...">
+                    <label for="search-box" class="fas fa-search"></label>
+                </form>
+
+                <div class="menu">
+                    <div id="search-btn" class="fas fa-search">
+                        <a href="#home">Home</a>
+                        <a href="#release">New Release</a>
+                        <a href="#featured">Featured</a>
+                        <a href="#reviews">Reviews</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-shopping-cart"></a>
+                    </div>
                 </div>
-                <div class="user-info">
-                    <a href="#"><i class="uil uil-signin">My Kindle Board</i></a>
-                    <a href="#"><i class="uil uil-folder-network">Collections</i></a>
-                    <a href="#"><i class="uil uil-bookmark"></i>Saved</a>
-                    <a href="#"><i class="uil uil-user">Profile</i></a>
-                    <a href="#" onclick="openLogin()" class="text login-link"><i class="uil uil-signout"></i>Signout</a>
-                </div>
-                <div class="logo1">
-                    <img src="./images/amazon.jpg" alt="Logo picture">
-                </div>
+            
+            </div>
+        </div>
+
+        <!-- Books read last section -->
+        <div class="books-read">
+            <div class="read-title">
+                <h4><strong>Books you read last</strong></h4>
             </div>
 
-            <div class="right-sidebar">
-                <div class="navbar">
-                    <div class="search-link">
-                        <img src="./images/kindle.jpg" alt="Logo picture">
-
-                    
-                        <input type="text" id="name" placeholder="Search your books...">
-                        <a href="#">New Release</a>
-                        <a href="#">Featured</a>
-                    
+            <div class="read-last">
+                <div class="book">
+                    <img src="./images/Harry Potter and the Sorcerer's Stone.jpg">
+                    <div class="content">
+                        <h4>Harry Potter and the sorcerer stone</h4>
+                        <p>Price: R450.00</p>
+                        <p>ISBN: 1234567890</p>
+                        <p>309 pages.</p>
+                        <p>Chapter 13.</p>
+                        <p>Last Read</p>
+                        <p class="book-description">"This book is about the wizards and their world."</p>
+                        <button>Add To Cart</button>
                     </div>
                 </div>
-                <div class="books-read">
-                    <div class="read-title">
-                        <h4><strong>Books you read last</strong></h4>
-                    </div>
-
-                    <div class="read-last">
-                        <div class="book">
-                            <img src="./images/Harry Potter and the Sorcerer's Stone.jpg">
-                            <div class="content">
-                                <h4>Harry Potter and the sorcerer stone</h4>
-                                <p>Price: R450.00</p>
-                                <p>ISBN: 1234567890</p>
-                                <p>309 pages.</p>
-                                <p>Chapter 13.</p>
-                                <p>Last Read</p>
-                                <p class="book-description">"This book is about the wizards and their world."</p>
-                                <button>Add To Cart</button>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./images/Mangava.jpg">
-                            <div class="content">
-                                <h4>Mangava</h4>
-                                <p>Price: R380.00</p>
-                                <p>ISBN: 1234567890</p>
-                                <p>New purchase.</p>
-                                <p>Last Read</p>
-                                <p class="book-description">"This book is about the wizards and their world."</p>
-                                <button>Add To Cart</button>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <img src="./images/Macbeth.jpg">
-                            <div class="content">
-                                <h4>Macbeth</h4>
-                                <p>Price: R300.00</p>
-                                <p>ISBN: 1234567890</p>
-                                <p>New purchase.</p>
-                                <p>Last Read</p>
-                                <p class="book-description">"This book is about the wizards and their world."</p>
-                                <button>Add To Cart</button>
-                            </div>
-                        </div>
-        
+                <div class="book">
+                    <img src="./images/Mangava.jpg">
+                    <div class="content">
+                        <h4>Mangava</h4>
+                        <p>Price: R380.00</p>
+                        <p>ISBN: 1234567890</p>
+                        <p>New purchase.</p>
+                        <p>Last Read</p>
+                        <p class="book-description">"This book is about the wizards and their world."</p>
+                        <button>Add To Cart</button>
                     </div>
                 </div>
-                <div class="new-release">
-                        <div class="release-title">
-                            <h4><strong>New Release</strong></h4>
-                        </div>
-
-                        <div class="books-new">
-                            <div class="new-book">
-                                <img src="./images/Owned By A Sinner, An Irish Mafia Romance.jpg">
-                                <div class="release-content">
-                                    <h5>Owned By A Sinner, An Irish Mafia Romance</h5>
-                                    <h4>Michelle Heard</h4>
-                                    <p>Novel</p>
-                                    <p>Price: R250.00</p>
-                                    <p>ISBN: 1234567890</p>
-                                    <p class="book-description">"This book is about the wizards and their world."</p>
-                                    <button>Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="new-book">
-                                <img src="./images/Book Lovers.jpg">
-                                <div class="release-content">
-                                    <h5>Book Lovers</h5>
-                                    <h4>Emily Henry</h4>
-                                    <p>Novel</p>
-                                    <p>Price: R150.00</p>
-                                    <p>ISBN: 1234567890</p>
-                                    <p class="book-description">"This book is about the wizards and their world."</p>
-                                    <button>Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="new-book">
-                                <img src="./images/Shattered Cradle (Makarova Bratva Book 2).jpg">
-                                <div class="release-content">
-                                    <h5>Shattered Cradle (Makarova Bratva Book 2)</h5>
-                                    <h4>Nicole Fox</h4>
-                                    <p>Thriller</p>
-                                    <p>Price: R690.00</p>
-                                    <p>ISBN: 1234567890</p>
-                                    <p class="book-description">"This book is about the wizards and their world."</p>
-                                    <button>Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="new-book">
-                                <img src="./images/22 Seconds (Women's Murder Club).jpg">
-                                <div class="release-content">
-                                    <h5>22 Seconds (Women's Murder Club)</h5>
-                                    <h4>James Patterson</h4>
-                                    <p>Fiction</p>
-                                    <p>Price: R530.00</p>
-                                    <p>ISBN: 1234567890</p>
-                                    <p class="book-description">"This book is about the wizards and their world."</p>
-                                    <button>Add To Cart</button>
-                                </div>
-                            </div>
-                            <div class="new-book">
-                                <img src="./images/The Candid Life of Meena Dave.jpg">
-                                <div class="release-content">
-                                    <h5>The Candid Life of Meena Dave</h5>
-                                    <h4>Namrata Patel</h4>
-                                    <p>Novel</p>
-                                    <p>Price: R400.00</p>
-                                    <p>ISBN: 1234567890</p>
-                                    <p class="book-description">"This book is about the wizards and their world."</p>
-                                    <button>Add To Cart</button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="book">
+                    <img src="./images/Macbeth.jpg">
+                    <div class="content">
+                        <h4>Macbeth</h4>
+                        <p>Price: R300.00</p>
+                        <p>ISBN: 1234567890</p>
+                        <p>New purchase.</p>
+                        <p>Last Read</p>
+                        <p class="book-description">"This book is about the wizards and their world."</p>
+                        <button>Add To Cart</button>
+                    </div>
                 </div>
 
-                <div class="famous-authors">
-                    <h4><strong>Famous Authors</strong></h4>
+            </div>
+        </div>
 
-                    <div class="book-author">
-                        <div class="author">
-                            <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
-                            <div class="author-content">
-                                <h5><strong>J.K. Rowlings</strong></h5>
-                                <p>10 Books</p>
-                            </div>
+        <!-- New release Books section -->
+        <div class="new-release">
+                <div class="release-title">
+                    <h4><strong>New Release</strong></h4>
+                </div>
+
+                <div class="books-new">
+                    <div class="new-book">
+                        <img src="./images/Owned By A Sinner, An Irish Mafia Romance.jpg">
+                        <div class="release-content">
+                            <h5>Owned By A Sinner, An Irish Mafia Romance</h5>
+                            <h4>Michelle Heard</h4>
+                            <p>Novel</p>
+                            <p>Price: R250.00</p>
+                            <p>ISBN: 1234567890</p>
+                            <p class="book-description">"This book is about the wizards and their world."</p>
+                            <button>Add To Cart</button>
                         </div>
-                        <div class="author">
-                            <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
-                            <div class="author-content">
-                                <h5><strong>T.H Khosa</strong></h5>
-                                <p>61 Novels</p>
-                            </div>
+                    </div>
+                    <div class="new-book">
+                        <img src="./images/Book Lovers.jpg">
+                        <div class="release-content">
+                            <h5>Book Lovers</h5>
+                            <h4>Emily Henry</h4>
+                            <p>Novel</p>
+                            <p>Price: R150.00</p>
+                            <p>ISBN: 1234567890</p>
+                            <p class="book-description">"This book is about the wizards and their world."</p>
+                            <button>Add To Cart</button>
                         </div>
-                        <div class="author">
-                            <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
-                            <div class="author-content">
-                                <h5><strong>William Shakespeare</strong></h5>
-                                <p>179 Books</p>
-                            </div>
+                    </div>
+                    <div class="new-book">
+                        <img src="./images/Shattered Cradle (Makarova Bratva Book 2).jpg">
+                        <div class="release-content">
+                            <h5>Shattered Cradle (Makarova Bratva Book 2)</h5>
+                            <h4>Nicole Fox</h4>
+                            <p>Thriller</p>
+                            <p>Price: R690.00</p>
+                            <p>ISBN: 1234567890</p>
+                            <p class="book-description">"This book is about the wizards and their world."</p>
+                            <button>Add To Cart</button>
                         </div>
+                    </div>
+                    <div class="new-book">
+                        <img src="./images/22 Seconds (Women's Murder Club).jpg">
+                        <div class="release-content">
+                            <h5>22 Seconds (Women's Murder Club)</h5>
+                            <h4>James Patterson</h4>
+                            <p>Fiction</p>
+                            <p>Price: R530.00</p>
+                            <p>ISBN: 1234567890</p>
+                            <p class="book-description">"This book is about the wizards and their world."</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div class="new-book">
+                        <img src="./images/The Candid Life of Meena Dave.jpg">
+                        <div class="release-content">
+                            <h5>The Candid Life of Meena Dave</h5>
+                            <h4>Namrata Patel</h4>
+                            <p>Novel</p>
+                            <p>Price: R400.00</p>
+                            <p>ISBN: 1234567890</p>
+                            <p class="book-description">"This book is about the wizards and their world."</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Book Authors section -->
+        <div class="famous-authors">
+            <h4><strong>Famous Authors</strong></h4>
+
+            <div class="book-author">
+                <div class="author">
+                    <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
+                    <div class="author-content">
+                        <h5><strong>J.K. Rowlings</strong></h5>
+                        <p>10 Books</p>
+                    </div>
+                </div>
+                <div class="author">
+                    <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
+                    <div class="author-content">
+                        <h5><strong>T.H Khosa</strong></h5>
+                        <p>61 Novels</p>
+                    </div>
+                </div>
+                <div class="author">
+                    <img class="author-pic" src="./images/books.jpg" alt="Author's Picture">
+                    <div class="author-content">
+                        <h5><strong>William Shakespeare</strong></h5>
+                        <p>179 Books</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Icons section -->
+        <div class="icons-container">
+           <div class="icons-view">
+            <div class="icons">
+                <i class="fa fa-plane" aria-hidden="true"></i>
+                <div class="icon-content">
+                    <h3>Free shipping</h3>
+                    <p>Orders over R400</p>
+                </div>
+            </div>
+
+            <div class="icons">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <div class="icon-content">
+                    <h3>Secure payment</h3>
+                    <p>100% secure payment</p>
+                </div>
+            </div>
+
+            <div class="icons">
+                <i class="far fa-redo-alt"></i>
+                <div class="icon-content">
+                    <h3>Easy returns</h3>
+                    <p>10 days returns</p>
+                </div>
+            </div>
+
+            <div class="icons">
+                <i class="fa-solid fa-headset"></i>
+                <div class="icon-content">
+                    <h3>24/7 support</h3>
+                    <p>call us anytime</p>
+                </div>
+            </div>
+           </div>
+        </div>   
+    </div>
+</div>
      </div>
 
      <script src="./script.js">
